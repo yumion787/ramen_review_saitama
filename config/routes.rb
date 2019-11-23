@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :reviews
+  resources :stores
   get 'sessions/new'
   get 'sessions/create'
   get 'sessions/destroy'
@@ -10,5 +12,10 @@ Rails.application.routes.draw do
   
   get 'signup', to: 'users#new'
   resources :users
+  
+  resources :stores, only: [:create, :destroy]
+  
+  resources :reviews
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
