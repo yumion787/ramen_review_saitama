@@ -5,8 +5,6 @@ class User < ApplicationRecord
     has_secure_password
     
     has_many :stores
-    has_many :reviews
-    
     has_many :favorites
     has_many :favstores, through: :favorites, source: :store
     
@@ -25,5 +23,27 @@ class User < ApplicationRecord
     
     def fav_stores
      Store.where(user_id: self.favstore_ids + [self.id])
+    end
+    
+    
+    has_many :reviews
+    has_many :likes
+    has_many :likereviews, through: :likes, source: :review
+    
+    def like(review)
+      likes.find_or_create_by(review_id: review.id)
+    end
+    
+    def unlike(review)
+     like = self.likes.find_by(review_id: review.id)
+     like.destroy if like
+    end
+    
+    def likereview?(review)
+     self.likereviews.include?(review)
+    end
+    
+    def like_reviews
+     Review.where(user_id: self.likereview_ids + [self.id])
     end
 end
