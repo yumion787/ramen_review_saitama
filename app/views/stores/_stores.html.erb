@@ -1,7 +1,6 @@
 <ul class="list-unstyled">
     <% stores.each do |store| %>
        <li class="media mb-3">
-           <img class="mr-2 rounded" src="<%= gravatar_url(store.user, { size: 50 }) %>" alt="">
            <div class="media-body">
                <div>
                    <%= link_to store.user.name, user_path(store.user) %> <span class="text-muted">posted at <%= store.created_at %></span>

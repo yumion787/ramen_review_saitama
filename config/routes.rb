@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'favorites/create'
+  get 'favorites/destroy'
+  get 'favorites/create'
+  get 'favorites/destoroy'
   resources :reviews
   resources :stores
   get 'sessions/new'
@@ -11,9 +15,14 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
   
   get 'signup', to: 'users#new'
-  resources :users
+  resources :users, only: [:index, :show, :new, :create] do
+    member do
+      get :favorites
+    end
+  end
   
-  resources :stores, only: [:create, :destroy]
+  resources :stores
+  resources :favorites, only: [:create, :destroy]
   
   resources :reviews
   

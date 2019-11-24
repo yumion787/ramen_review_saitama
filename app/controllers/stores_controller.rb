@@ -1,6 +1,6 @@
 class StoresController < ApplicationController
-  before_action :set_store, only: [:show, :edit, :update, :destroy]
-
+  #begore_action :require_user_logged_in
+  
   # GET /stores
   # GET /stores.json
   def index
@@ -24,16 +24,15 @@ class StoresController < ApplicationController
   # POST /stores
   # POST /stores.json
   def create
-    @store = Store.new(store_params)
-
-    respond_to do |format|
-      if @store.save
-        format.html { redirect_to @store, notice: 'Store was successfully created.' }
-        format.json { render :show, status: :created, location: @store }
-      else
-        format.html { render :new }
-        format.json { render json: @store.errors, status: :unprocessable_entity }
-      end
+    @store = current_user.stores.build(store_params)
+    
+    if @store.save
+        flash[:success] = '店舗情報を投稿しました。'
+        redirect_to root_url
+    else
+        @stores = current_user.stores.order(id: :desc).page(params[:page])
+        flash.now[:danger] = '店舗情報の投稿に失敗しました。'
+        render 'toppages/index'
     end
   end
 
@@ -55,10 +54,8 @@ class StoresController < ApplicationController
   # DELETE /stores/1.json
   def destroy
     @store.destroy
-    respond_to do |format|
-      format.html { redirect_to stores_url, notice: 'Store was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    flash[:success] = '店舗情報を削除しました。'
+    redirect_back(fallback_location: root_path)
   end
 
   private
@@ -69,6 +66,6 @@ class StoresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def store_params
-      params.require(:store).permit(:name, :address, :infomation, :image, :user_id)
+      params.require(:store).permit(:name, :address, :infomation, :image)
     end
 end

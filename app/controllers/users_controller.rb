@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :require_user_logged_in, only: [:index, :show]
+  before_action :require_user_logged_in, only: [:index, :show, :favorites]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
@@ -12,6 +12,8 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
+    @stores = @user.stores.order(id: :desc).page(params[:page])
+    counts(@user)
   end
 
   # GET /users/new
@@ -66,6 +68,12 @@ class UsersController < ApplicationController
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+  
+  def favorites
+    @user = User.find(params[:id])
+    @favorites = @user.fav_stores.page(params[:page])
+    counts(@user)
   end
 
   private
