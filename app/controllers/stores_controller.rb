@@ -68,4 +68,11 @@ class StoresController < ApplicationController
     def store_params
       params.require(:store).permit(:name, :address, :infomation, :image)
     end
+    
+    def correct_user
+      @store = current_user.stores.find_by(id: params[:id])
+      unless @store
+        redirect_to root_url
+      end
+    end
 end

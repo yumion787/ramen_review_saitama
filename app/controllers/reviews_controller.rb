@@ -24,16 +24,15 @@ class ReviewsController < ApplicationController
   # POST /reviews
   # POST /reviews.json
   def create
-    @review = Review.new(review_params)
-
-    respond_to do |format|
-      if @review.save
-        format.html { redirect_to @review, notice: 'Review was successfully created.' }
-        format.json { render :show, status: :created, location: @review }
-      else
-        format.html { render :new }
-        format.json { render json: @review.errors, status: :unprocessable_entity }
-      end
+    @review = current_user.reviews.build(review_params)
+    
+    if @review.save
+        flash[:success] = 'レビューを投稿しました。'
+        redirect_to root_url
+    else
+        @reviews = current_user.reviews.order(id: :desc).page(params[:page])
+        flash.now[:danger] = 'レビューの投稿に失敗しました。'
+        render 'toppages/index'
     end
   end
 
@@ -55,10 +54,8 @@ class ReviewsController < ApplicationController
   # DELETE /reviews/1.json
   def destroy
     @review.destroy
-    respond_to do |format|
-      format.html { redirect_to reviews_url, notice: 'Review was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    flash[:success] = 'レビューを削除しました。'
+    redirect_back(fallback_location: root_path)
   end
 
   private
@@ -70,5 +67,12 @@ class ReviewsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
       params.require(:review).permit(:menu, :comment, :image)
+    end
+    
+    def correct_user
+      @review = current_user.reviews.find_by(id: params[:id])
+      unless @review
+        redirect_to root_url
+      end
     end
 end

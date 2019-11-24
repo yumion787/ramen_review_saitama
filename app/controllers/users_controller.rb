@@ -14,6 +14,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @stores = @user.stores.order(id: :desc).page(params[:page])
     counts(@user)
+    @reviews = @user.reviews.order(id: :desc).page(params[:page])
+    counts(@user)
   end
 
   # GET /users/new
@@ -75,15 +77,22 @@ class UsersController < ApplicationController
     @favorites = @user.fav_stores.page(params[:page])
     counts(@user)
   end
+  
+  def likes
+    @user = User.find(params[:id])
+    @likes = @user.like_reviews.page(params[:page])
+    counts(@user)
+  end
 
   private
+  
     # Use callbacks to share common setup or constraints between actions.
-    def set_user
+  def set_user
       @user = User.find(params[:id])
-    end
+  end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def user_params
+  def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
-    end
+  end
 end

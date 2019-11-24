@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'likes/create'
+  get 'likes/destroy'
   get 'favorites/create'
   get 'favorites/destroy'
   get 'favorites/create'
@@ -18,6 +20,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show, :new, :create] do
     member do
       get :favorites
+      get :likes
     end
   end
   
@@ -25,6 +28,7 @@ Rails.application.routes.draw do
   resources :favorites, only: [:create, :destroy]
   
   resources :reviews
+  resources :likes, only: [:create, :destroy]
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
