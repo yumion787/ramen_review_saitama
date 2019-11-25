@@ -1,5 +1,55 @@
-<h1>New User</h1>
+<div id="whole" class="p-auto">
+  <div class="text-center">
+    <h2>ユーザー登録</h2>
+  </div>
 
-<%= render 'form', user: @user %>
+  <div class="row">
+    <div>
+      
+     <%= form_with(model: @user, local: true) do |f| %>
+     
+      <div class="form-group row">
+       <div class="col-md-4">
+        <%= f.label :name, 'ニックネーム' %>
+       </div>
+       <div class="col-md-8">
+        <%= f.text_field :name, class: 'form-control', :size=>"80" %>
+       </div>
+     </div>
 
-<%= link_to 'Back', users_path %>
+      <div class="form-group row">
+       <div class="col-md-4">
+        <%= f.label :email, 'メールアドレス' %>
+       </div>
+       <div class="col-md-8">
+        <%= f.text_field :email, class: 'form-control', :size=>"80" %>
+       </div>
+      </div>
+
+      <div class="form-group row">
+          <div class="col-md-4">
+             <%= f.label :password, 'パスワード' %>
+          </div>
+          <div class="col-md-8">
+             <%= f.text_field :password, class: 'form-control', :size=>"80" %>
+          </div>
+      </div>
+
+      <div class="form-group row">
+          <div class="col-md-4">
+             <%= f.label :password_confirmation, 'パスワード確認用' %>
+          </div>
+          <div class="col-md-8">
+             <%= f.text_field :password_confirmation, class: 'form-control', :size=>"80" %>
+          </div>
+      </div>
+
+      <%= f.submit 'Sign up', class: 'btn btn-primary btn-block' %>
+     <% end %>
+        
+    </div>
+    
+    
+  </div>
+
+</div>

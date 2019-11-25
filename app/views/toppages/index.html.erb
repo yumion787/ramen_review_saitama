@@ -1,23 +1,18 @@
-<% if logged_in? %>
-  <div class="row">
-    <aside class="col-sm-4">
-      <%= form_with(model: @store, local: true) do |f| %>
-        <div class="form-group">
-          <%= f.text_area :content, class: 'form-control', rows: 1 %>
-          <%= f.text_area :content, class: 'form-control', rows: 1 %>
-        </div>
-        <%= f.submit 'Post', class: 'btn btn-primary btn-block' %>
-      <% end %>
-    </aside>
-    <div class="col-sm-8">
-      <%= render 'stores/stores', stores: @stores %>
-    </div>
-  </div>
-<% else %>
+<!DOCTYPE html>
+<html lang="ja">
+<body>
+ <div id="whole">
   <div class="center jumbotron">
-    <div class="text-center">
-      <h1>Welcome to !!</h1>
-      <%= link_to 'Sign up now!', signup_path, class: 'btn btn-lg btn-primary' %>
-    </div>
+   <img src="../images/ramen_img1.jpeg" class="img-rounded img-responsive" alt="ラーメンイラスト">
+      <div class="text-center">
+        <h1>埼玉のラーメン店</h1>
+        <h3>店舗情報/レビューでお気に入りを見つけよう！！</h3>
+      </div>
   </div>
-<% end %>
+ </div>
+<div id="footer" class="text-center mb-5">
+  <a class="">お問い合わせ</a>
+  <br></br>
+  <h8>@ Takuya</h8>
+</div>
+</body>
