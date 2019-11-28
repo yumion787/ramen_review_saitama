@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="ja">
 <body>
- <div id="whole">
+ <div id="whole" style="padding-top: 80px; padding-bottom: 80px;">
   <div class="center jumbotron">
-   <img src="../images/ramen_img1.jpeg" class="img-rounded img-responsive" alt="ラーメンイラスト">
+   <div style="border-radius: 50%;">
+       <%= image_tag "/ramen_img1.jpeg" %>
+   </div>
       <div class="text-center">
-        <h1>埼玉のラーメン店</h1>
-        <h3>店舗情報/レビューでお気に入りを見つけよう！！</h3>
+        <h2>埼玉のラーメン店</h2>
+        <h4>店舗情報/レビューでお気に入りを見つけよう！！</h4>
       </div>
   </div>
  </div>
-<div id="footer" class="text-center mb-5">
-  <a class="">お問い合わせ</a>
+ <div id="footer" class="text-center mb-5">
+  <a class="" href="/">お問い合わせ</a>
   <br></br>
-  <h8>@ Takuya</h8>
-</div>
+  <p>@ Takuya</p>
+ </div>
 </body>

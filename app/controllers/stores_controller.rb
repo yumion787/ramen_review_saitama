@@ -1,10 +1,12 @@
 class StoresController < ApplicationController
-  #begore_action :require_user_logged_in
+  # begore_action :require_user_logged_in, only:[:new, :edit, :destroy]
   
   # GET /stores
   # GET /stores.json
   def index
     @stores = Store.all
+    # @store = current_user.stores.build  # form_with 用
+    # @stores = current_user.stores.order(id: :desc).page(params[:page])
   end
 
   # GET /stores/1

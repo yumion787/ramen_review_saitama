@@ -1,21 +1,21 @@
-<ul class="list-unstyled">
-    <% stores.each do |store| %>
-       <li class="media mb-3">
-           <div class="media-body">
-               <div>
-                   <%= link_to store.user.name, user_path(store.user) %> <span class="text-muted">posted at <%= store.created_at %></span>
-               </div>
-               <div>
-                   <p><%= store.content %></p>
-               </div>
-                   <%= render 'favorites/favorites_button', store: store %>
-               <div>
-                   <% if current_user == store.user %>
-                    <%= link_to "Delete", store, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger' %>
-                   <% end %>
-               </div>
-           </div>
-       </li>
-    <% end %>
-    <%= paginate stores %>
-</ul>
+<!--<ul class="list-unstyled">-->
+<!--    <% stores.each do |store| %>-->
+<!--       <li class="media mb-3">-->
+<!--           <div class="media-body">-->
+<!--               <div>-->
+<!--                   <%= link_to store.user.name, user_path(store.user) %> <span class="text-muted">posted at <%= store.created_at %></span>-->
+<!--               </div>-->
+<!--               <div>-->
+<!--                   <p><%= store.name %></p>-->
+<!--               </div>-->
+<!--                   <%= render 'favorites/favorites_button', store: store %>-->
+<!--               <div>-->
+<!--                   <% if current_user == store.user %>-->
+<!--                    <%= link_to "Delete", store, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger' %>-->
+<!--                   <% end %>-->
+<!--               </div>-->
+<!--           </div>-->
+<!--       </li>-->
+<!--    <% end %>-->
+<!--    <%= paginate stores %>-->
+<!--</ul>-->

@@ -1,5 +1,6 @@
-<div id="whole" class="p-auto">
-  <div class="text-center">
+<div id="whole" class="" style="padding: 50px 0px;">
+ <div class="center jumbotron">
+  <div class="text-center" style="padding: 50px;">
     <h2>ユーザー登録</h2>
   </div>
 
@@ -22,7 +23,7 @@
         <%= f.label :email, 'メールアドレス' %>
        </div>
        <div class="col-md-8">
-        <%= f.text_field :email, class: 'form-control', :size=>"80" %>
+        <%= f.email_field :email, class: 'form-control', :size=>"80" %>
        </div>
       </div>
 
@@ -31,7 +32,7 @@
              <%= f.label :password, 'パスワード' %>
           </div>
           <div class="col-md-8">
-             <%= f.text_field :password, class: 'form-control', :size=>"80" %>
+             <%= f.password_field :password, class: 'form-control', :size=>"80" %>
           </div>
       </div>
 
@@ -40,16 +41,23 @@
              <%= f.label :password_confirmation, 'パスワード確認用' %>
           </div>
           <div class="col-md-8">
-             <%= f.text_field :password_confirmation, class: 'form-control', :size=>"80" %>
+             <%= f.password_field :password_confirmation, class: 'form-control', :size=>"80" %>
           </div>
       </div>
-
-      <%= f.submit 'Sign up', class: 'btn btn-primary btn-block' %>
+      
+      <div class="text-center">
+          <%= f.submit '作成', class: 'btn btn-primary btn-large active' %>
+      </div>
      <% end %>
         
     </div>
     
     
   </div>
-
+ </div>
+</div>
+<div id="footer" class="text-center mb-5">
+  <a class="" href="/">お問い合わせ</a>
+  <br></br>
+  <p>@ Takuya</p>
 </div>

@@ -1,12 +1,12 @@
 <header class="mb-4">
     <nav class="navbar navbar-expand-sm navbar-dark">
         <a class="navbar-brand bg-primary" href="/"><h1>埼玉のラーメン</h1></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+        <button class="navbar-toggler bg-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
            <span class="navbar-toggler-icon"></span>
         </button>
         
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-           <ul class="navbar-nav bg-primary">
+           <ul class="navbar-nav bg-dark">
              <% if logged_in? %>
                <li class="nav-item dropdown">
                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><%= current_user.name %></a>
@@ -24,9 +24,9 @@
         </div>
         
     </nav>
-    <div class="nav justify-content-center">
-       <a class="nav-link d-inline bg-primary text-light p-12" href="#">新着レビュー</a>
-       <a class="nav-link d-inline bg-primary text-light" href="#">店舗情報</a>
-       <a class="nav-link d-inline bg-primary text-light" href="#">マイページ</a>
+    <div class="nav justify-content-center" >
+       <a class="nav-link d-inline bg-primary text-light text-center" href="/reviews" style="width: 150px; border-left: 1px solid; ">新着レビュー</a>
+       <a class="nav-link d-inline bg-primary text-light text-center" href="/stores" style="width: 150px; border-left: 1px solid;">店舗情報</a>
+       <a class="nav-link d-inline bg-primary text-light text-center" href="#" style="width: 150px; border-left: 1px solid;">マイページ</a>
     </div>
 </header>

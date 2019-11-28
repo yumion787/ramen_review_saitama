@@ -10,12 +10,13 @@ class UsersController < ApplicationController
 
   # GET /users/1
   # GET /users/1.json
+  # マイページ
   def show
     @user = User.find(params[:id])
-    @stores = @user.stores.order(id: :desc).page(params[:page])
-    counts(@user)
-    @reviews = @user.reviews.order(id: :desc).page(params[:page])
-    counts(@user)
+    # @stores = @user.stores.order(id: :desc).page(params[:page])
+    # counts(@user)
+    # @reviews = @user.reviews.order(id: :desc).page(params[:page])
+    # counts(@user)
   end
 
   # GET /users/new
