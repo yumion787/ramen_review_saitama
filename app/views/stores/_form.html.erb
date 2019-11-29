@@ -11,6 +11,7 @@
     </div>
   <% end %>
 
+  <%= form_for @pst do |f| %>
   <div class="row">
     <div class="col-md-3">
       <strong>店名</strong>
@@ -43,11 +44,17 @@
       <strong>写真</strong>
     </div>
     <div class="col-md-9">
-      <%= form.file_field :image %>
+      
+        <%= f.file_field :image %>
+        <!--<%= f.submit 'アップロードする'%>-->
+      <!--<%= form.label :image %>-->
+      <!--<%= form.file_field :image %>-->
     </div>
   </div>
 
   <div class="actions text-center">
     <%= form.submit :登録 %>
   </div>
+  
+  <% end %>
 <% end %>

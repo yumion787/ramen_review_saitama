@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :psts
   get 'users/show'
   root to: 'toppages#index'
   
@@ -21,6 +22,9 @@ Rails.application.routes.draw do
   
   resources :reviews
   resources :likes, only: [:create, :destroy]
+  
+  root "psts#index"
+  resources :psts
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

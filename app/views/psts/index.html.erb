@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Psts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @psts.each do |pst| %>
+      <tr>
+        <td><%= pst.image %></td>
+        <td><%= link_to 'Show', pst %></td>
+        <td><%= link_to 'Edit', edit_pst_path(pst) %></td>
+        <td><%= link_to 'Destroy', pst, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pst', new_pst_path %>

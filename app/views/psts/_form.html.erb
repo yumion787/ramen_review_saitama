@@ -1,0 +1,22 @@
+<%= form_with(model: pst, local: true) do |form| %>
+  <% if pst.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pst.errors.count, "error") %> prohibited this pst from being saved:</h2>
+
+      <ul>
+      <% pst.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

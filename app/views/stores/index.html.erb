@@ -15,8 +15,9 @@
   <div class="card mb-3">
      <div class="row no-gutters">
        <% @stores.each do |store| %>
+       <% @psts.each do |image| %>
         <div class="col-md-4 my-auto">
-            <%= store.image %>
+            <%= image_tag store.image.to_s %>
         </div>
         <div class="col-md-8">
             <div class="card-body">
@@ -26,6 +27,7 @@
                 <a class="btn btn-primary" href="/stores">続きを読む</a>
             </div>
         </div>
+        <% end %>
         <% end %>
      </div>
   </div>

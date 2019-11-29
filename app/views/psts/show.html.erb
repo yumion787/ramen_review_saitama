@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @pst.image.url if @pst.image? %>
+</p>
+
+<%= link_to 'Edit', edit_pst_path(@pst) %> |
+<%= link_to 'Back', psts_path %>

@@ -7,5 +7,4 @@ class Store < ApplicationRecord
   # address文字数は、50文字まで
   validates :address, length: { maximum: 50 }
   
-  
 end

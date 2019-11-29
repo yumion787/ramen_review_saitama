@@ -21,6 +21,7 @@ class StoresController < ApplicationController
   # GET /stores/new
   def new
     @store = Store.new
+    @pst = Pst.new
   end
 
   # GET /stores/1/edit
@@ -82,4 +83,5 @@ class StoresController < ApplicationController
         redirect_to root_url
       end
     end
+    
 end
