@@ -11,22 +11,67 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :menu %>
-    <%= form.text_field :menu %>
+  
+  <div class="row">
+    <div class="col-md-3">
+      <strong>メニュー</strong>
+    </div>
+    <div class="col-md-9">
+      <%= form.text_field :menu, :size=>"50" %>
+    </div>
+  </div>
+  
+  </br>
+  
+  <div class="row">
+    <div class="col-md-3">
+      <strong>コメント</strong>
+    </div>
+    <div class="col-md-9">
+      <%= form.text_area :comment, :size=>"50x10" %>
+    </div>
+  </div>
+  
+  </br>
+
+  <div class="row">
+    <div class="col-md-3">
+      <strong>写真</strong>
+    </div>
+    <div class="col-md-9">
+      
+      <%= form.file_field :image %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :comment %>
-    <%= form.text_area :comment %>
+  </br>
+
+  <div class="actions text-center">
+    <%= form.submit :登録, class: 'btn btn-primary' %>
+ 
+    <%= link_to '削除', review, method: :delete, data: { confirm: '削除しますか？' }, class: 'btn btn-danger' %>
+  </div>
+  
+  <div class="text-center">
+    <%= link_to '戻る', reviews_path, class: 'btn btn-primary' %>
   </div>
 
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.file_field :image %>
-  </div>
+  <!--<div class="field">-->
+  <!--  <%= form.label :menu %>-->
+  <!--  <%= form.text_field :menu %>-->
+  <!--</div>-->
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <!--<div class="field">-->
+  <!--  <%= form.label :comment %>-->
+  <!--  <%= form.text_area :comment %>-->
+  <!--</div>-->
+
+  <!--<div class="field">-->
+  <!--  <%= form.label :image %>-->
+  <!--  <%= form.file_field :image %>-->
+  <!--</div>-->
+
+  <!--<div class="actions">-->
+  <!--  <%= form.submit %>-->
+  <!--</div>-->
 <% end %>

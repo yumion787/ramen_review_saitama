@@ -6,28 +6,6 @@
 
 <p id="notice"><%= notice %></p>
 
- <!--<tr>-->
- <!--  <div class="card mb-3">-->
- <!--    <div class="container no-gutters">-->
- <!--       <div class="row">-->
- <!--          <th>-->
- <!--          <div class="col-md-3">-->
- <!--             <strong>店名</strong>-->
- <!--          </div>-->
- <!--          </th>-->
- <!--          <td>-->
- <!--          <div class="col-md-9">-->
- <!--             <%= @store.name %>-->
- <!--          </div>-->
- <!--          </td>-->
- <!--       </div>-->
- <!--    </div>-->
- <!--  </div>-->
-   
-   
-  
-  
- <!--</tr>-->
  
   <div class="card mb-3">
      <div class="container no-gutters">
@@ -40,6 +18,8 @@
            </div>
         </div>
         
+        </br>
+        
         <div class="row">
            <div class="col-md-3">
               <strong>住所</strong>
@@ -49,14 +29,18 @@
            </div>
         </div>
         
+        </br>
+        
         <div class="row">
            <div class="col-md-3">
               <strong>情報</strong>
            </div>
            <div class="col-md-9">
-               <%= @store.infomation %>
+               <%= simple_format(@store.infomation) %>
            </div>
         </div>
+        
+        </br>
         
         <div class="row">
            <div class="col-md-3">
@@ -89,9 +73,14 @@
 <!--  <%= @store.image %>-->
 <!--</p>-->
 
+<div class="text-center">
+  <%= link_to '店舗情報修正', edit_store_path(@store), class: 'btn btn-primary' %> 
+</div>
+</br>
+<div class="text-center">
+  <%= link_to '戻る', stores_path, class: 'btn btn-primary' %>
+</div>
 
-<%= link_to 'Edit', edit_store_path(@store) %> |
-<%= link_to 'Back', stores_path %>
 
  </div>
 </div>

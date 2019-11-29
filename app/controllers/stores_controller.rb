@@ -1,11 +1,13 @@
 class StoresController < ApplicationController
   # begore_action :require_user_logged_in, only:[:new, :edit, :destroy]
-  before_action :correct_user, only: [:destroy]
+  before_action :correct_user, only: [:edit, :destroy]
   
   # GET /stores
   # GET /stores.json
   def index
     @stores = Store.all
+    @psts = Pst.all
+    
     # @store = current_user.stores.build  # form_with 用
     # @stores = current_user.stores.order(id: :desc).page(params[:page])
   end
@@ -26,7 +28,8 @@ class StoresController < ApplicationController
 
   # GET /stores/1/edit
   def edit
-    
+    @store = Store.find(params[:id])
+    # @pst = Pst.find(params[:id])
   end
 
   # POST /stores
@@ -36,26 +39,33 @@ class StoresController < ApplicationController
     
     if @store.save
         flash[:success] = '店舗情報を投稿しました。'
-        redirect_to root_url
+        redirect_to stores_path
     else
         @stores = current_user.stores.order(id: :desc).page(params[:page])
         flash.now[:danger] = '店舗情報の投稿に失敗しました。'
-        render 'toppages/index'
+        render '/stores'
     end
   end
 
   # PATCH/PUT /stores/1
   # PATCH/PUT /stores/1.json
   def update
-    respond_to do |format|
+    @store = Store.find(params[:id])
+    # @store.update(title: params[:title])
+    # redirect_to stores_path
+    
+    # respond_to do |format|
       if @store.update(store_params)
-        format.html { redirect_to @store, notice: 'Store was successfully updated.' }
-        format.json { render :show, status: :ok, location: @store }
+        flash[:success] = '店舗情報を修正しました。'
+        redirect_to stores_path(@store)
+        # format.html { redirect_to @store, notice: 'Store was successfully updated.' }
+        # format.json { render :show, status: :ok, location: @store }
       else
-        format.html { render :edit }
-        format.json { render json: @store.errors, status: :unprocessable_entity }
+        render 'edit'
+        # format.html { render :edit }
+        # format.json { render json: @store.errors, status: :unprocessable_entity }
       end
-    end
+    # end
   end
 
   # DELETE /stores/1
@@ -83,5 +93,4 @@ class StoresController < ApplicationController
         redirect_to root_url
       end
     end
-    
-end
+ end

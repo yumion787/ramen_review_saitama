@@ -1,15 +1,18 @@
 class ReviewsController < ApplicationController
-  before_action :set_review, only: [:show, :edit, :update, :destroy]
+  # before_action :set_review, only: [:show, :edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :destroy]
 
   # GET /reviews
   # GET /reviews.json
   def index
     @reviews = Review.all
+    
   end
 
   # GET /reviews/1
   # GET /reviews/1.json
   def show
+    @review = Review.find(params[:id])
   end
 
   # GET /reviews/new
@@ -19,6 +22,7 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/1/edit
   def edit
+    @review = Review.find(params[:id])
   end
 
   # POST /reviews
@@ -32,21 +36,21 @@ class ReviewsController < ApplicationController
     else
         @reviews = current_user.reviews.order(id: :desc).page(params[:page])
         flash.now[:danger] = 'レビューの投稿に失敗しました。'
-        render 'toppages/index'
+        render '/reviews'
     end
   end
 
   # PATCH/PUT /reviews/1
   # PATCH/PUT /reviews/1.json
   def update
-    respond_to do |format|
-      if @review.update(review_params)
-        format.html { redirect_to @review, notice: 'Review was successfully updated.' }
-        format.json { render :show, status: :ok, location: @review }
-      else
-        format.html { render :edit }
-        format.json { render json: @review.errors, status: :unprocessable_entity }
-      end
+    @review = Review.find(params[:id])
+    # respond_to do |format|
+    
+    if @review.update(review_params)
+        flash[:success] = '店舗情報を修正しました。'
+        redirect_to reviews_path(@review)
+    else
+        render 'edit'
     end
   end
 

@@ -7,23 +7,66 @@
 
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Menu:</strong>
-  <%= @review.menu %>
-</p>
+<div class="card mb-3">
+     <div class="container no-gutters">
+        <div class="row">
+           <div class="col-md-3">
+              <strong>メニュー</strong>
+           </div>
+           <div class="col-md-9">
+              <%= @review.menu %>
+           </div>
+        </div>
+        
+        </br>
+        
+        <div class="row">
+           <div class="col-md-3">
+              <strong>コメント</strong>
+           </div>
+           <div class="col-md-9">
+               <%= @review.comment %>
+           </div>
+        </div>
+        
+        </br>
+        
+        <div class="row">
+           <div class="col-md-3">
+              <strong>写真</strong>
+           </div>
+           <div class="col-md-9">
+               <%= @review.image %>
+           </div>
+        </div>
+    </div>
+  </div>
 
-<p>
-  <strong>Comment:</strong>
-  <%= @review.comment %>
-</p>
+<!--<p>-->
+<!--  <strong>Menu:</strong>-->
+<!--  <%= @review.menu %>-->
+<!--</p>-->
 
-<p>
-  <strong>Image:</strong>
-  <%= @review.image %>
-</p>
+<!--<p>-->
+<!--  <strong>Comment:</strong>-->
+<!--  <%= @review.comment %>-->
+<!--</p>-->
 
-<%= link_to 'Edit', edit_review_path(@review) %> |
-<%= link_to 'Back', reviews_path %>
+<!--<p>-->
+<!--  <strong>Image:</strong>-->
+<!--  <%= @review.image %>-->
+<!--</p>-->
+
+<!--<%= link_to 'Edit', edit_review_path(@review) %> |-->
+<!--<%= link_to 'Back', reviews_path %>-->
+
+<div class="text-center">
+  <%= link_to 'レビュー修正', edit_review_path(@review), class: 'btn btn-primary' %> 
+</div>
+</br>
+<div class="text-center">
+  <%= link_to '戻る', reviews_path, class: 'btn btn-primary' %>
+</div>
 
 
  </div>

@@ -1,6 +1,6 @@
 <div id="whole" class="" style="padding: 50px 0px;">
  <div class="center jumbotron">
-  <div class="">
+  <div>
     <div class="text-center" style="padding: 50px;">
       <h2>店舗情報</h2>
     </div>
@@ -8,15 +8,41 @@
       <a class="btn btn-primary" href="stores/new">新規店舗登録</a>
     </div>
   </div>
-  
+    
+    
   <p id="notice"><%= notice %></p>
   
+  <!--<div class="card mb-3">-->
+  <!--  <div class="row no-gutters">-->
+  <!--   <table border="1">-->
+  <!--    <tr>-->
+  <!--      <th>店名</th>-->
+  <!--      <td>住所</td>-->
+  <!--    </tr>-->
+  <!--    <tbody>-->
+  <!--     <% @stores.each do |store| %>-->
+  <!--      <tr>-->
+  <!--        <th><%= store.name %></th>-->
+  <!--        <td><%= store.address %></td>-->
+  <!--        <td><%= link_to '店舗詳細', store %></td>-->
+          <!--<td><%= link_to 'Edit', edit_store_path(store) %></td>-->
+          <!--<td><%= link_to 'Destroy', store, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+  <!--      </tr>-->
+  <!--     <% end %>-->
+  <!--    </tbody>-->
+  <!--   </table>-->
+  <!--  </div>-->
+  <!-- </div>-->
+   
+
+
   
+  
+ 
   <div class="card mb-3">
-     <div class="row no-gutters">
-       <% @stores.each do |store| %>
-       <% @psts.each do |image| %>
-        <div class="col-md-4 my-auto">
+    <div class="row no-gutters">
+        <% @stores.each do |store| %>
+        <div class="col-md-4 my-auto ">
             <%= image_tag store.image.to_s %>
         </div>
         <div class="col-md-8">
@@ -24,51 +50,52 @@
                 <h5 class="card-title"><%= store.name %></h5>
                 <p><%= store.address %></p>
                 <p><%= store.infomation %></p>
-                <a class="btn btn-primary" href="/stores">続きを読む</a>
+                <%= link_to '店舗詳細', store, class: 'btn btn-primary' %>
             </div>
         </div>
         <% end %>
-        <% end %>
+
      </div>
   </div>
   
-
-  
-  
- <table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Address</th>
-      <th>Infomation</th>
-      <th>Image</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @stores.each do |store| %>
-      <tr>
-        <td><%= store.name %></td>
-        <td><%= store.address %></td>
-        <td><%= store.infomation %></td>
-        <td><%= store.image %></td>
-        <td><%= store.user %></td>
-        <td><%= link_to 'Show', store %></td>
-        <td><%= link_to 'Edit', edit_store_path(store) %></td>
-        <td><%= link_to 'Destroy', store, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
- </table>
-
-  <br>
-
-  <%= link_to 'New Store', new_store_path %>
-
  </div>
 </div>
+
+  
+  
+ <!--<table>-->
+ <!-- <thead>-->
+ <!--   <tr>-->
+ <!--     <th>Name</th>-->
+ <!--     <th>Address</th>-->
+ <!--     <th>Infomation</th>-->
+ <!--     <th>Image</th>-->
+ <!--     <th>User</th>-->
+ <!--     <th colspan="3"></th>-->
+ <!--   </tr>-->
+ <!-- </thead>-->
+
+ <!-- <tbody>-->
+ <!--   <% @stores.each do |store| %>-->
+ <!--     <tr>-->
+ <!--       <td><%= store.name %></td>-->
+ <!--       <td><%= store.address %></td>-->
+ <!--       <td><%= store.infomation %></td>-->
+ <!--       <td><%= store.image %></td>-->
+ <!--       <td><%= store.user %></td>-->
+ <!--       <td><%= link_to 'Show', store %></td>-->
+ <!--       <td><%= link_to 'Edit', edit_store_path(store) %></td>-->
+ <!--       <td><%= link_to 'Destroy', store, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+ <!--     </tr>-->
+ <!--   <% end %>-->
+ <!-- </tbody>-->
+ <!--</table>-->
+
+
+  <!--<%= link_to 'New Store', new_store_path %>-->
+
+<!-- </div>-->
+<!--</div>-->
 
 
 
