@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_23_152418) do
+ActiveRecord::Schema.define(version: 2019_11_29_092030) do
 
   create_table "favorites", force: :cascade do |t|
     t.integer "user_id"
@@ -30,6 +30,12 @@ ActiveRecord::Schema.define(version: 2019_11_23_152418) do
     t.index ["review_id"], name: "index_likes_on_review_id"
     t.index ["user_id", "review_id"], name: "index_likes_on_user_id_and_review_id", unique: true
     t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
+  create_table "psts", force: :cascade do |t|
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "reviews", force: :cascade do |t|
