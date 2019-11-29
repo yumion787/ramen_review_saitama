@@ -1,6 +1,17 @@
-<h1>Editing Store</h1>
+<div id="whole" class="" style="padding: 50px 0px;">
+ <div class="center jumbotron">
+  <div class="text-center" style="padding: 50px;">
+    <h2>店舗情報修正</h2>
+  </div>
+  
+  <%= render 'form', store: @store %>
+  
+  
+ </div>
+</div>
 
-<%= render 'form', store: @store %>
+
+
 
 <%= link_to 'Show', @store %> |
 <%= link_to 'Back', stores_path %>

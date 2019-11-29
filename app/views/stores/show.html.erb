@@ -1,29 +1,97 @@
+<div id="whole" class="" style="padding: 50px 0px;">
+ <div class="center jumbotron">
+  <div class="text-center" style="padding: 50px;">
+    <h2>店舗詳細</h2>
+  </div>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @store.name %>
-</p>
+ <!--<tr>-->
+ <!--  <div class="card mb-3">-->
+ <!--    <div class="container no-gutters">-->
+ <!--       <div class="row">-->
+ <!--          <th>-->
+ <!--          <div class="col-md-3">-->
+ <!--             <strong>店名</strong>-->
+ <!--          </div>-->
+ <!--          </th>-->
+ <!--          <td>-->
+ <!--          <div class="col-md-9">-->
+ <!--             <%= @store.name %>-->
+ <!--          </div>-->
+ <!--          </td>-->
+ <!--       </div>-->
+ <!--    </div>-->
+ <!--  </div>-->
+   
+   
+  
+  
+ <!--</tr>-->
+ 
+  <div class="card mb-3">
+     <div class="container no-gutters">
+        <div class="row">
+           <div class="col-md-3">
+              <strong>店名</strong>
+           </div>
+           <div class="col-md-9">
+              <%= @store.name %>
+           </div>
+        </div>
+        
+        <div class="row">
+           <div class="col-md-3">
+              <strong>住所</strong>
+           </div>
+           <div class="col-md-9">
+               <%= @store.address %>
+           </div>
+        </div>
+        
+        <div class="row">
+           <div class="col-md-3">
+              <strong>情報</strong>
+           </div>
+           <div class="col-md-9">
+               <%= @store.infomation %>
+           </div>
+        </div>
+        
+        <div class="row">
+           <div class="col-md-3">
+              <strong>写真</strong>
+           </div>
+           <div class="col-md-9">
+               <%= @store.image %>
+           </div>
+        </div>
+    </div>
+  </div>
 
-<p>
-  <strong>Address:</strong>
-  <%= @store.address %>
-</p>
+  
+<!--<p>-->
+<!--  <strong>Name:</strong>-->
+<!--  <%= @store.name %>-->
+<!--</p>-->
+<!--<p>-->
+<!--  <strong>Address:</strong>-->
+<!--  <%= @store.address %>-->
+<!--</p>-->
 
-<p>
-  <strong>Infomation:</strong>
-  <%= @store.infomation %>
-</p>
+<!--<p>-->
+<!--  <strong>Infomation:</strong>-->
+<!--  <%= @store.infomation %>-->
+<!--</p>-->
 
-<p>
-  <strong>Image:</strong>
-  <%= @store.image %>
-</p>
+<!--<p>-->
+<!--  <strong>Image:</strong>-->
+<!--  <%= @store.image %>-->
+<!--</p>-->
 
-<p>
-  <strong>User:</strong>
-  <%= @store.user %>
-</p>
 
 <%= link_to 'Edit', edit_store_path(@store) %> |
 <%= link_to 'Back', stores_path %>
+
+ </div>
+</div>

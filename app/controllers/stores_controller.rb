@@ -1,5 +1,6 @@
 class StoresController < ApplicationController
   # begore_action :require_user_logged_in, only:[:new, :edit, :destroy]
+  before_action :correct_user, only: [:destroy]
   
   # GET /stores
   # GET /stores.json
@@ -12,6 +13,9 @@ class StoresController < ApplicationController
   # GET /stores/1
   # GET /stores/1.json
   def show
+    @store = Store.find(params[:id])
+    # @stores = @user.stores.order(id: :desc).page(params[:page])
+    # counts(@store)
   end
 
   # GET /stores/new
@@ -21,6 +25,7 @@ class StoresController < ApplicationController
 
   # GET /stores/1/edit
   def edit
+    
   end
 
   # POST /stores
