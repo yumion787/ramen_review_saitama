@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       get :favorites
       get :likes
     end
+    
   end
   
   resources :stores

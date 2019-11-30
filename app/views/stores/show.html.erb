@@ -73,6 +73,13 @@
 <!--  <%= @store.image %>-->
 <!--</p>-->
 
+<!--#フォローボタン-->
+<div class="center-block">
+<div class="col-sm-3">
+    <%= render 'favorites/follow_button', store: @store %>
+</div>
+</div>
+</br>
 <div class="text-center">
   <%= link_to '店舗情報修正', edit_store_path(@store), class: 'btn btn-primary' %> 
 </div>
