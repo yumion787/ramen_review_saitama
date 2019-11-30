@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  content: MyString
-  user: one
+  menu: MyString
+  body: MyText
   store: one
 
 two:
-  content: MyString
-  user: two
+  menu: MyString
+  body: MyText
   store: two

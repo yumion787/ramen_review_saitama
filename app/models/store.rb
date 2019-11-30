@@ -1,5 +1,6 @@
 class Store < ApplicationRecord
   belongs_to :user
+  has_many :comments
   
   # name文字数は、１文字〜30文字まで
   validates :name, presence: true, length: { maximum: 30 }

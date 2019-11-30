@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :comments
   resources :psts
   get 'users/show'
   root to: 'toppages#index'
