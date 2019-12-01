@@ -78,9 +78,11 @@
          <div class="text-right">
            <%= link_to 'レビュー詳細', comment, class: 'btn btn-primary' %>
          </div>
+         <% if logged_in? %>
          <div class="text-right">
             <%= link_to '削除', comment_path(comment), method: :delete, data: { confirm: '削除しますか？' }, class: 'btn btn-danger' %>
          </div>
+         <% end %>
          
          <hr>
          
@@ -133,10 +135,15 @@
     </div>
 </div>
 </br>
+
+<% if logged_in? %>
 <div class="text-center">
   <%= link_to '店舗情報修正', edit_store_path(@store), class: 'btn btn-primary' %> 
 </div>
+<% end %>
+
 </br>
+
 <div class="text-center">
   <%= link_to '戻る', stores_path, class: 'btn btn-primary' %>
 </div>

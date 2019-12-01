@@ -1,4 +1,4 @@
-
+<% if logged_in? %>
   <% if current_user.favstore?(store) %>
     <%= form_with(model: current_user.favorites.find_by(store_id: store.id), local: true, method: :delete) do |f| %>
       <%= hidden_field_tag :store_id, store.id %>
@@ -10,3 +10,4 @@
       <%= f.submit 'お気に入り', class: 'btn btn-primary btn-block' %>
     <% end %>
   <% end %>
+<% end %>

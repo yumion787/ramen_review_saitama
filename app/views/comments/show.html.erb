@@ -36,9 +36,11 @@
   
   <br>
   
+  <% if logged_in? %>
   <div class="text-center">
      <%= link_to 'レビュー修正', edit_comment_path(@comment), class: 'btn btn-primary' %>
   </div>
+  <% end %>
   </br>
   <div class="text-center">
      <%= link_to '戻る', comments_path, class: 'btn btn-primary' %>
