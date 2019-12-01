@@ -63,7 +63,7 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
 
     if @comment.update(comment_params)
-        flash[:success] = '店舗情報を修正しました。'
+        flash[:success] = 'レビューを修正しました。'
         redirect_to comments_path(@comment)
     else
         render 'edit'

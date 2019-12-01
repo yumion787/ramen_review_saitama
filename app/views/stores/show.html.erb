@@ -75,9 +75,11 @@
            <strong>コメント</strong>
            <%= comment.body %>
          </div>
-         
          <div class="text-right">
-         <%= link_to '削除', comment_path(comment), method: :delete, data: { confirm: '削除しますか？' }, class: 'btn btn-danger' %>
+           <%= link_to 'レビュー詳細', comment, class: 'btn btn-primary' %>
+         </div>
+         <div class="text-right">
+            <%= link_to '削除', comment_path(comment), method: :delete, data: { confirm: '削除しますか？' }, class: 'btn btn-danger' %>
          </div>
          
          <hr>
