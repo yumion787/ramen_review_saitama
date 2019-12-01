@@ -13,10 +13,10 @@ class UsersController < ApplicationController
   # マイページ
   def show
     @user = User.find(params[:id])
-    # @stores = @user.stores.order(id: :desc).page(params[:page])
+    @stores = @user.stores.order(id: :desc).page(params[:page])
     # counts(@user)
-    # @reviews = @user.reviews.order(id: :desc).page(params[:page])
-    # counts(@user)
+    # @comments = @store.comments.order(id: :desc).page(params[:page])
+    
   end
 
   # GET /users/new
