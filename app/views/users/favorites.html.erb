@@ -1,0 +1,14 @@
+<div class="row">
+    <h5><%= @store.name %></h5>
+    
+    <%= render 'favorites/follow_button', store: @store %>
+    
+    
+    <div>
+        <a href="<%= favorites_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(favorites_user_path(@user)) %>">Favorites  </a>
+    </div>
+    <%= render 'stores', stores: @favorites %>
+    
+    
+    
+</div>

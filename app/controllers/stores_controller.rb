@@ -6,7 +6,7 @@ class StoresController < ApplicationController
   # GET /stores.json
   def index
     @stores = Store.all
-    @psts = Pst.all
+    # @psts = Pst.all
     
     # @store = current_user.stores.build  # form_with 用
     # @stores = current_user.stores.order(id: :desc).page(params[:page])
@@ -25,7 +25,7 @@ class StoresController < ApplicationController
   # GET /stores/new
   def new
     @store = Store.new
-    @pst = Pst.new
+    # @pst = Pst.new
   end
 
   # GET /stores/1/edit
@@ -38,7 +38,6 @@ class StoresController < ApplicationController
   # POST /stores.json
   def create
     @store = current_user.stores.build(store_params)
-    
     if @store.save
         flash[:success] = '店舗情報を投稿しました。'
         redirect_to stores_path

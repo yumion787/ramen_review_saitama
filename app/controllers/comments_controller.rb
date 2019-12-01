@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
   # GET /comments.json
   def index
     @stores = Store.all
-    @comments = Comment.all
+    @comments = Comment.all.page(params[:page]).per(10)
   end
 
   # GET /comments/1

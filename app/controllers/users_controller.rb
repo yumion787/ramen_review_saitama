@@ -13,7 +13,10 @@ class UsersController < ApplicationController
   # マイページ
   def show
     @user = User.find(params[:id])
-    @stores = @user.stores.order(id: :desc).page(params[:page])
+    @stores = current_user.stores.order(id: :desc).page(params[:page]).per(10)
+    
+    # @stores = @user.stores.order(id: :desc).page(params[:page])
+    # @favorites = @user.favstores.order(id: :desc).page(params[:page])
     # counts(@user)
     # @comments = @store.comments.order(id: :desc).page(params[:page])
     
@@ -75,15 +78,15 @@ class UsersController < ApplicationController
   
   def favorites
     @user = User.find(params[:id])
-    @favorites = @user.fav_stores.page(params[:page])
+    @favorites = @user.favstores.page(params[:page])
     counts(@user)
   end
   
-  def likes
-    @user = User.find(params[:id])
-    @likes = @user.like_reviews.page(params[:page])
-    counts(@user)
-  end
+  # def likes
+  #   @user = User.find(params[:id])
+  #   @likes = @user.like_reviews.page(params[:page])
+  #   counts(@user)
+  # end
 
   private
   

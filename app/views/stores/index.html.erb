@@ -12,42 +12,16 @@
     
   <p id="notice"><%= notice %></p>
   
-  <!--<div class="card mb-3">-->
-  <!--  <div class="row no-gutters">-->
-  <!--   <table border="1">-->
-  <!--    <tr>-->
-  <!--      <th>店名</th>-->
-  <!--      <td>住所</td>-->
-  <!--    </tr>-->
-  <!--    <tbody>-->
-  <!--     <% @stores.each do |store| %>-->
-  <!--      <tr>-->
-  <!--        <th><%= store.name %></th>-->
-  <!--        <td><%= store.address %></td>-->
-  <!--        <td><%= link_to '店舗詳細', store %></td>-->
-          <!--<td><%= link_to 'Edit', edit_store_path(store) %></td>-->
-          <!--<td><%= link_to 'Destroy', store, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
-  <!--      </tr>-->
-  <!--     <% end %>-->
-  <!--    </tbody>-->
-  <!--   </table>-->
-  <!--  </div>-->
-  <!-- </div>-->
-   
-
-
-  
-  
  
   <div class="card mb-3">
     <div class="row no-gutters">
         <% @stores.each do |store| %>
         <div class="col-md-4 my-auto ">
+            <h5 class="card-title"><%= store.name %></h5>
             <%= image_tag store.image.to_s %>
         </div>
         <div class="col-md-8">
             <div class="card-body">
-                <h5 class="card-title"><%= store.name %></h5>
                 <p><%= store.address %></p>
                 <p><%= store.infomation %></p>
                 <%= link_to '店舗詳細', store, class: 'btn btn-primary' %>
@@ -63,83 +37,9 @@
  </div>
 </div>
 
-  
-  
- <!--<table>-->
- <!-- <thead>-->
- <!--   <tr>-->
- <!--     <th>Name</th>-->
- <!--     <th>Address</th>-->
- <!--     <th>Infomation</th>-->
- <!--     <th>Image</th>-->
- <!--     <th>User</th>-->
- <!--     <th colspan="3"></th>-->
- <!--   </tr>-->
- <!-- </thead>-->
-
- <!-- <tbody>-->
- <!--   <% @stores.each do |store| %>-->
- <!--     <tr>-->
- <!--       <td><%= store.name %></td>-->
- <!--       <td><%= store.address %></td>-->
- <!--       <td><%= store.infomation %></td>-->
- <!--       <td><%= store.image %></td>-->
- <!--       <td><%= store.user %></td>-->
- <!--       <td><%= link_to 'Show', store %></td>-->
- <!--       <td><%= link_to 'Edit', edit_store_path(store) %></td>-->
- <!--       <td><%= link_to 'Destroy', store, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
- <!--     </tr>-->
- <!--   <% end %>-->
- <!-- </tbody>-->
- <!--</table>-->
-
-
-  <!--<%= link_to 'New Store', new_store_path %>-->
-
-<!-- </div>-->
-<!--</div>-->
-
-
-
-<!--<div id="whole" class="" style="padding: 50px 0px;">-->
-<!-- <div class="center jumbotron">-->
-<!--  <div class="text-center" style="padding: 50px;">-->
-<!--    <h2>店舗情報</h2>-->
-<!--  </div>-->
-
-<!--  <div class="row">-->
-<!--    <div>-->
-      
-<!--     <%= form_with(model: @user, local: true) do |f| %>-->
-    
-    
-<!--    <div class="card mb-3" style="max-width: 540px">-->
-<!--     <div class="row no-gutters">-->
-<!--        <div class="col-md-4 my-auto">-->
-<!--            <img class="card-img" src="#">-->
-<!--        </div>-->
-<!--        <div class="col-md-8">-->
-<!--            <div class="card-body">-->
-<!--                <h5 class="card-title">A</h5>-->
-<!--                <p>ここに写真の説明などを記載します。これは例えば作品集の一部を写真で示しておいて、下のリンクから作品集ページに飛んでもらうような仕掛けを作ることができます。</p>-->
-<!--                <a class="btn btn-primary" href="#">Details</a>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--     </div>-->
-<!--    </div>-->
-      
-      
-<!--     <% end %>-->
-        
-<!--    </div>-->
-    
-    
-<!--  </div>-->
-<!-- </div>-->
-<!--</div>-->
 
 <div id="footer" class="text-center mb-5">
-  <a class="" href="/">お問い合わせ</a>
+  <!--<a class="" href="/">お問い合わせ</a>-->
   <br></br>
   <p>@ Takuya</p>
 </div>
