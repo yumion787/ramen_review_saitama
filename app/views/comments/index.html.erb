@@ -1,31 +1,74 @@
-<p id="notice"><%= notice %></p>
+<div id="whole" class="" style="padding: 50px 0px;">
+ <div class="center jumbotron">
+  <div>
+    <div class="text-center" style="padding: 50px;">
+      <h2>新着レビュー</h2>
+    </div>
+    
+  </div>
 
-<h1>Comments</h1>
+  <p id="notice"><%= notice %></p>
+  
+  <div class="card mb-3">
+    <div class="row no-gutters">
+        
+        <% @comments.each do |comment| %>
+        <% @stores.each do |store| %>
+        <div class="col-md-4 my-auto ">
+            
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title"><%= comment.menu %></h5>
+                <p><%= comment.body %></p>
+                <p><%= store.name %></p>
+                <%= link_to 'レビュー詳細', comment, class: 'btn btn-primary' %>
+            </div>
+        </div>
+        <% end %>
+        <% end %>
+     </div>
+  </div>
+  
+ </div>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Menu</th>
-      <th>Body</th>
-      <th>Store</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @comments.each do |comment| %>
-      <tr>
-        <td><%= comment.menu %></td>
-        <td><%= comment.body %></td>
-        <td><%= comment.store %></td>
-        <td><%= link_to 'Show', comment %></td>
-        <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
-        <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+
+<br>
+
+ </div>
+</div>
+
+<!--<h1>Comments</h1>-->
+
+<!--<table>-->
+<!--  <thead>-->
+<!--    <tr>-->
+<!--      <th>Menu</th>-->
+<!--      <th>Body</th>-->
+<!--      <th>Store</th>-->
+<!--      <th colspan="3"></th>-->
+<!--    </tr>-->
+<!--  </thead>-->
+
+<!--  <tbody>-->
+<!--    <% @comments.each do |comment| %>-->
+<!--      <tr>-->
+<!--        <td><%= comment.menu %></td>-->
+<!--        <td><%= comment.body %></td>-->
+<!--        <td><%= comment.store %></td>-->
+<!--        <td><%= link_to 'Show', comment %></td>-->
+<!--        <td><%= link_to 'Edit', edit_comment_path(comment) %></td>-->
+<!--        <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+<!--      </tr>-->
+<!--    <% end %>-->
+<!--  </tbody>-->
+<!--</table>-->
 
 <br>
 
 <%= link_to 'New Comment', new_comment_path %>
+
+  </div>
+</div>

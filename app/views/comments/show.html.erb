@@ -1,19 +1,50 @@
-<p id="notice"><%= notice %></p>
+<div id="whole" class="" style="padding: 50px 0px;">
+ <div class="center jumbotron">
+  <div class="text-center" style="padding: 50px;">
+    <h2>レビュー詳細</h2>
+  </div>
 
-<p>
-  <strong>Menu:</strong>
-  <%= @comment.menu %>
-</p>
+　<p id="notice"><%= notice %></p>
+　
+　<div class="card mb-3">
+     <div class="container no-gutters">
+        <div class="row">
+           <div class="col-md-3">
+               <strong>メニュー</strong>
+           </div>
+           <div class="col-md-9">
+               <%= @comment.menu %>
+           </div>
+        </div>
+        
+        </br>
+        
+        <div class="row">
+           <div class="col-md-3">
+               <strong>コメント</strong>
+           </div>
+           <div class="col-md-9">
+               <%= simple_format(@comment.body) %>
+           </div>
+        </div>
+        
+        
+        
+        
+    </div>
+  </div>
+  
+  <br>
+  
+  <div class="text-center">
+     <%= link_to 'レビュー修正', edit_comment_path(@comment), class: 'btn btn-primary' %>
+  </div>
+  </br>
+  <div class="text-center">
+     <%= link_to '戻る', comments_path, class: 'btn btn-primary' %>
+  </div>
 
-<p>
-  <strong>Body:</strong>
-  <%= @comment.body %>
-</p>
 
-<p>
-  <strong>Store:</strong>
-  <%= @comment.store %>
-</p>
 
-<%= link_to 'Edit', edit_comment_path(@comment) %> |
-<%= link_to 'Back', comments_path %>
+ </div>
+</div>

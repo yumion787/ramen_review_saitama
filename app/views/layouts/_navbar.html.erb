@@ -25,9 +25,12 @@
         
     </nav>
     <div class="nav justify-content-center" >
-       <a class="nav-link d-inline bg-primary text-light text-center" href="/reviews" style="width: 150px; border-left: 1px solid; ">新着レビュー</a>
+       <a class="nav-link d-inline bg-primary text-light text-center" href="/comments/" style="width: 150px; border-left: 1px solid; ">新着レビュー</a>
        <a class="nav-link d-inline bg-primary text-light text-center" href="/stores" style="width: 150px; border-left: 1px solid;">店舗情報</a>
-       <!--<link_to 'マイページ', user_path(current_user), class: 'width: 150px, border-left: 1px solid' %>-->
+      <% if logged_in? %> 
        <a class="nav-link d-inline bg-primary text-light text-center" href="/users/<%= current_user.id %>" style="width: 150px; border-left: 1px solid;">マイページ</a>
+      
+       
+      <% end %>
     </div>
 </header>

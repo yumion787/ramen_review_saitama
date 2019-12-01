@@ -18,6 +18,8 @@ class StoresController < ApplicationController
     @store = Store.find(params[:id])
     # @stores = @user.stores.order(id: :desc).page(params[:page])
     # counts(@store)
+    @comments = @store.comments.all
+    @comment = @store.comments.build
   end
 
   # GET /stores/new
