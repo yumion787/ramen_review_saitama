@@ -1,6 +1,7 @@
 class Store < ApplicationRecord
   belongs_to :user
   has_many :comments
+  mount_uploader :image, ImageUploader
   
   # name文字数は、１文字〜30文字まで
   validates :name, presence: true, length: { maximum: 30 }

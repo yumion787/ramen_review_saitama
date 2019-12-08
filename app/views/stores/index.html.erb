@@ -13,25 +13,31 @@
   <p id="notice"><%= notice %></p>
   
   
-  <div class="card">
-    <div class="container">
+  <div class="card mb-3">
+    <div class="row no-gutters">
+        
         <% @stores.each do |store| %>
-        <h5 class="card-title"><%= store.name %></h5>
-        <div class="">
-            <div class="card-body">
-                <div class="col-md-4 my-auto">
+        
+        <div class="col-md-4 my-auto">
                     <% if store.image? %>
-                    <%= image_tag store.image.url, :size =>'150x150' %>
+                    <%= image_tag store.image.url, :size =>'130x100' %>
                     <% end %>
-                </div>
-                <div class="col-md-8">
+                    
+        </div>
+        
+        
+        <div class="col-md-8">
+            <div class="card-body">
+                    <h5 class="card-title"><%= store.name %></h5>
                     <p><%= store.address %></p>
                     <p><%= store.infomation %></p>
                     <%= link_to '店舗詳細', store, class: 'btn btn-primary' %>
-                </div>
+                    <hr>
             </div>
-            <hr>
-        </div>
+         </div>
+           
+         <hr>
+         
         <% end %>
      </div>
   </div>

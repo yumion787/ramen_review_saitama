@@ -28,8 +28,20 @@
            </div>
         </div>
         
+        </br>
         
+        <div class="row">
+           <div class="col-md-3">
+               <h5><strong>写真</strong></h5>
+           </div>
+           <div class="col-md-9">
+               <% if @comment.image? %>
+               <%= image_tag @comment.image.url, :size =>'200x200' %>
+               <% end %>
+           </div>
+        </div>
         
+        </br>
         
     </div>
   </div>

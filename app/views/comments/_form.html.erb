@@ -28,6 +28,14 @@
       <h6><%= form.text_area :body, :size=>"38x10" %></h6>
     </div>
   </div>
+  <div class="row">
+    <div class="col-md-3">
+      <h6><strong>写真</strong></h6>
+    </div>
+    <div class="col-md-9">
+      <%= form.file_field :image %>
+    </div>
+  </div>
   
   <%= form.hidden_field :store_id %>
 

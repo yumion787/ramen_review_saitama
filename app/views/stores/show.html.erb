@@ -42,14 +42,19 @@
         
         </br>
         
-        <!--<div class="row">-->
-        <!--   <div class="col-md-3">-->
-        <!--      <strong>写真</strong>-->
-        <!--   </div>-->
-        <!--   <div class="col-md-9">-->
-        <!--       <%= @store.image %>-->
-        <!--   </div>-->
-        <!--</div>-->
+        <div class="row">
+           <div class="col-md-3">
+              <h5><strong>写真</strong></h5>
+           </div>
+           <div class="col-md-9">
+               <% if @store.image? %>
+               <%= image_tag @store.image.url, :size =>'200x200' %>
+               <% end %>
+           </div>
+        </div>
+        
+        </br>
+        
     </div>
   </div>
   
