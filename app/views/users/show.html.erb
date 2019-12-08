@@ -5,39 +5,22 @@
   </div>
   
   <div class="card mb-3">
-     <div class="container no-gutters">
-        
-        <%= render 'stores/stores', stores: @stores %>
-        
-        <%= render 'stores/stores', stores: @favorites %>
-        
-        
-        
-      
-       
-        
-        
+     <div class="row no-gutters">
+            <div class="card" style= "width: 100%; margin-right:auto; margin-left:auto; ">
+                <%= render 'stores/stores', stores: @stores %>
+                
+            </div>
      </div>
   </div>
-
-
-<!--<p id="notice"><%= notice %></p>-->
-
-<!--<p>-->
-<!--  <strong>Name:</strong>-->
-<!--  <%= @user.name %>-->
-<!--</p>-->
-
-<!--<p>-->
-<!--  <strong>Email:</strong>-->
-<!--  <%= @user.email %>-->
-<!--</p>-->
-
-<!--<p>-->
-<!--  <strong>Password digest:</strong>-->
-<!--  <%= @user.password_digest %>-->
-<!--</p>-->
-
-<!--<%= link_to 'Edit', edit_user_path(@user) %> |-->
-<!--<%= link_to 'Back', users_path %>-->
-
+  
+  <div class="card mb-3">
+     <div class="row no-gutters">
+            <div class="card" style= "width: 100%; margin-right:auto; margin-left:auto; ">
+                <%= render 'stores/stores', stores: @favorites %>
+                
+            </div>
+     </div>
+  </div>
+  
+ </div>
+</div>
