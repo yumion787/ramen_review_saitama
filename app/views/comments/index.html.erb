@@ -13,7 +13,7 @@
     <div class="row no-gutters">
         
        <% @comments.each do |comment| %>
-       <% @stores.each do |store| %>
+       
        
         <div class="col-md-4 my-auto ">
            
@@ -22,7 +22,8 @@
             <div class="card-body">
                 <h5 class="card-title"><%= comment.menu %></h5>
                 <p><%= comment.body %></p>
-                <p><%= store.name %></p>
+                
+                
                 <%= link_to 'レビュー詳細', comment, class: 'btn btn-primary' %>
                 
                 <hr>
@@ -31,7 +32,6 @@
         </div>
         
     
-        <% end %>
         <% end %>
         
         <%= paginate @comments %>
