@@ -4,9 +4,13 @@
     <div class="text-center" style="padding: 50px;">
       <h2>店舗情報</h2>
     </div>
+    
+    <% if logged_in? %>
     <div class="text-right">
       <a class="btn btn-primary" href="stores/new">新規店舗登録</a>
     </div>
+    <% end %>
+    
   </div>
     
     
@@ -18,9 +22,9 @@
         
         <% @stores.each do |store| %>
         
-        <div class="col-md-4 my-auto">
+        <div class="col-md-3" style="margin:0px 12px;">
                     <% if store.image? %>
-                    <%= image_tag store.image.url, :size =>'130x100' %>
+                    <%= image_tag store.image.url, :size =>'140x140' %>
                     <% end %>
                     
         </div>
@@ -39,6 +43,7 @@
          <hr>
          
         <% end %>
+        <%= paginate @stores %>
      </div>
   </div>
   

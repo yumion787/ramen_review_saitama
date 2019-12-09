@@ -17,7 +17,7 @@
       <h6><strong>店名</strong></h6>
     </div>
     <div class="col-md-9">
-      <%= form.text_field :name, :size=>"35" %>
+      <%= form.text_field :name, class: 'form-control', :size=>"35" %>
     </div>
   </div>
   
@@ -28,7 +28,7 @@
       <h6><strong>住所</strong></h6>
     </div>
     <div class="col-md-9">
-      <%= form.text_field :address, :size=>"35" %>
+      <%= form.text_field :address, class: 'form-control', :size=>"35" %>
     </div>
   </div>
   
@@ -39,7 +39,7 @@
       <h6><strong>情報</strong></h6>
     </div>
     <div class="col-md-9">
-      <%= form.text_area :infomation, :size=>"38x10" %>
+      <%= form.text_area :infomation, class: 'form-control', :size=>"38x10" %>
     </div>
   </div>
   
@@ -59,8 +59,6 @@
 
   <div class="actions text-center">
     <%= form.submit :登録, class: 'btn btn-primary' %>
- 
-    <%= link_to '削除', store, method: :delete, data: { confirm: '削除しますか？' }, class: 'btn btn-danger' %>
   </div>
   
   <div class="text-center">

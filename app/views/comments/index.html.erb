@@ -15,9 +15,9 @@
        <% @comments.each do |comment| %>
        
        
-        <div class="col-md-4 my-auto">
+        <div class="col-md-3" style="margin:0px 12px;">
             <% if comment.image? %>
-            <%= image_tag comment.image.url, :size =>'130x100' %>
+            <%= image_tag comment.image.url, :size =>'140x140' %>
             <% end %>
         </div>
         <div class="col-md-8">

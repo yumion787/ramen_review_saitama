@@ -5,7 +5,7 @@ class StoresController < ApplicationController
   # GET /stores
   # GET /stores.json
   def index
-    @stores = Store.all
+    @stores = Store.all.page(params[:page]).per(5)
     # @psts = Pst.all
     
     # @store = current_user.stores.build  # form_with 用
@@ -32,6 +32,10 @@ class StoresController < ApplicationController
   def edit
     @store = Store.find(params[:id])
     # @pst = Pst.find(params[:id])
+    if @store.user_id != @current_user.id
+      flash[:notice] = '権限がありません'
+      redirect_to("/stores/index")
+    end
   end
 
   # POST /stores

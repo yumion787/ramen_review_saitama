@@ -11,7 +11,7 @@
      
       <div class="form-group row">
        <div class="col-md-4">
-        <%= f.label :name, 'ニックネーム' %>
+        <h6><%= f.label :name, 'ニックネーム' %></h6>
        </div>
        <div class="col-md-8">
         <%= f.text_field :name, class: 'form-control', :size=>"80" %>
@@ -20,7 +20,7 @@
 
       <div class="form-group row">
        <div class="col-md-4">
-        <%= f.label :email, 'メールアドレス' %>
+        <h6><%= f.label :email, 'メールアドレス' %></h6>
        </div>
        <div class="col-md-8">
         <%= f.email_field :email, class: 'form-control', :size=>"80" %>
@@ -29,7 +29,7 @@
 
       <div class="form-group row">
           <div class="col-md-4">
-             <%= f.label :password, 'パスワード' %>
+             <h6><%= f.label :password, 'パスワード' %></h6>
           </div>
           <div class="col-md-8">
              <%= f.password_field :password, class: 'form-control', :size=>"80" %>
@@ -38,7 +38,7 @@
 
       <div class="form-group row">
           <div class="col-md-4">
-             <%= f.label :password_confirmation, 'パスワード確認用' %>
+             <h6><%= f.label :password_confirmation, 'パスワード確認用' %></h6>
           </div>
           <div class="col-md-8">
              <%= f.password_field :password_confirmation, class: 'form-control', :size=>"80" %>

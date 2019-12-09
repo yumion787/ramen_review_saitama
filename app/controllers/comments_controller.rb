@@ -1,11 +1,12 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
+  # before_action :correct_user, only: [:edit, :destroy]
 
   # GET /comments
   # GET /comments.json
   def index
     @stores = Store.all
-    @comments = Comment.all.page(params[:page]).per(10)
+    @comments = Comment.all.page(params[:page]).per(5)
   end
 
   # GET /comments/1

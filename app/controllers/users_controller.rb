@@ -19,6 +19,10 @@ class UsersController < ApplicationController
     # @stores = @user.stores.order(id: :desc).page(params[:page])
     # @favorites = @user.favstores.order(id: :desc).page(params[:page])
     # counts(@user)
+    
+    # @comment = Comment.find(params[:id])
+    # @comments = @store.comments.order(id: :desc).page(params[:page]).per(10)
+    # @comments = @store.comments.all
     # @comments = @store.comments.order(id: :desc).page(params[:page])
     
   end

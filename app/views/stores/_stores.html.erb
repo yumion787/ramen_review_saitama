@@ -1,17 +1,22 @@
-<ul class="list-unstyled">
-    
+<div>
+  
   <% stores.each do |store| %>
-      <li><%= store.name %></li> 
-      <li><%= store.address %></li> 
-      <li><%= store.infomation %></li> 
+  <div class="">
+    <div class="container">
+      <h5>店名：<%= store.name %></h5> 
+      <h5>住所：<%= store.address %></h5>
+      <h5>情報：<%= store.infomation %></h5>
+      <hr>
+    </div>
       
-     
-      
-      <% if current_user == store.user %>
-          <%= link_to "Delete", store, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger' %>
-      <% end %>
-  <% end %>    
- 
-    
+  </div>
+  
+  <% if current_user == store.user %>
+      <div class="text-right">
+        <%= link_to '店舗詳細', store, class: 'btn btn-primary' %>
+      </div>
+  <% end %>
+  <% end %>  
+  
     <%= paginate stores %>
-</ul>
+</div>

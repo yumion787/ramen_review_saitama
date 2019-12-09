@@ -11,7 +11,7 @@
       
       <div class="form-group row">
         <div class="col-md-4">
-          <%= f.label :email, 'メールアドレス' %>
+          <h6><%= f.label :email, 'メールアドレス' %></h6>
         </div>
         <div class="col-md-8">
           <%= f.email_field :email, class: 'form-control', :size=>"80" %>
@@ -20,7 +20,7 @@
      
      <div class="form-group row">
         <div class="col-md-4">
-          <%= f.label :password, 'パスワード' %>
+          <h6><%= f.label :password, 'パスワード' %></h6>
         </div>
         <div class="col-md-8">
           <%= f.password_field :password, class: 'form-control', :size=>"80" %>
@@ -33,7 +33,7 @@
     <% end %>
     
     <div class="text-center">
-       <p>新規ユーザーですか? <a href="/signup" class="btn btn-primary">ユーザー登録</a></p>
+       <p>新規ユーザーですか?  <a href="/signup" class="btn btn-primary">ユーザー登録</a></p>
        <!--<%= link_to 'ユーザー登録', signup_path %>-->
     </div>
   </div>
@@ -41,7 +41,7 @@
 </div>
 
 <div id="footer" class="text-center mb-5">
-  <a class="" href="/">お問い合わせ</a>
+  <!--<a class="" href="/">お問い合わせ</a>-->
   <br></br>
   <p>@ Takuya</p>
 </div>
